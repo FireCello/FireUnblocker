@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'Outfit-Regular', sans-serif;
+  font-family: poppins, sans-serif;
   src: url(/assets/fonts/Outfit-Regular.ttf);
 }
 @font-face {
-  font-family: 'Outfit', sans-serif;
+  font-family: sans, sans-serif;
   src: url(/assets/fonts/Outfit-ExtraLight.ttf);
 }
 
