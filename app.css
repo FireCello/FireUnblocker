@@ -1,11 +1,8 @@
 @font-face {
-  font-family: 'Outfit-Regular', sans-serif;
-  src: url(/assets/fonts/Outfit-Regular.ttf);
-}
-@font-face {
   font-family: 'Outfit', sans-serif;
-  src: url(/assets/fonts/Outfit-ExtraLight.ttf);
+  src: url(/assets/fonts/poppins.ttf);
 }
+
 
 body {
   background-attachment: fixed; /* Make the gradient fixed */
@@ -26,7 +23,7 @@ body {
   box-sizing: border-box;
   color: white;
   cursor: pointer;
-  font-family: Outfit-Regular;
+  font-family: 'Outfit', sans-serif;
   font-size: 15px;
   font-weight: 500;
   text-align: center;
@@ -103,7 +100,7 @@ nav {
 
 
 nav p {
-  font-family: Outfit;
+  font-family: 'Outfit', sans-serif;
 }
 
 nav a {
@@ -111,14 +108,14 @@ nav a {
   text-align: center;
   text-decoration: none;
   margin: 8px;
-  font-family: Outfit;
+  font-family: 'Outfit', sans-serif;
 }
 nav button {
   float: right;
   text-align: center;
   text-decoration: none;
   margin: 9px;
-  font-family: Outfit;
+  font-family: 'Outfit', sans-serif;
 }
 nav .icon {
   display: none;
@@ -133,7 +130,7 @@ input {
   color: white;
   outline: none;
   border: 2px solid rgba(51, 51, 51, 0.692);;
-  font-family: Outfit;
+  font-family: 'Outfit', sans-serif;
   font-size: 15px;
   text-align: center;
   border-radius: 15px;
@@ -164,7 +161,7 @@ h1 {
 }
 
 .header {
-  font-family: mosk;
+  font-family: 'Outfit', sans-serif;
   font-size: 25px;
   color: white;
   margin-left: 20px;
@@ -231,7 +228,7 @@ html {
 }
 
 p {
-  font-family: Outfit;
+  font-family: 'Outfit', sans-serif;
   color: white;
   font-size: 25px;
   margin-left: 5px;
@@ -239,7 +236,7 @@ p {
 }
 
 .title {
-  font-family: Outfit-Regular;
+  font-family: 'Outfit', sans-serif;
   color: white;
   float: left;
   font-size: 25px;
@@ -260,7 +257,7 @@ p {
 }
 
 a {
-  font-family: Outfit;
+  font-family: 'Outfit', sans-serif;
   color: white;
   font-size: 17px;
   margin-left: 20px;
@@ -300,7 +297,7 @@ h1 {
 }
 
 h2 {
-  font-family: Outfit;
+  font-family: 'Outfit', sans-serif;
   color: white;
 }
 .footer {
@@ -352,7 +349,7 @@ h2 {
   background-color: rgba(48, 48, 48, 0.693);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.4);
   width: 150px;
-  font-family: Outfit-Regular;
+  font-family: 'Outfit', sans-serif;
   font-size: 18px;
   bottom: 1px; /* Adjust the distance from the bottom as needed */
   left: 50%;
