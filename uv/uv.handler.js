@@ -2,7 +2,7 @@ if (!self.__uv) {
     __uvHook(self, self.__uv$config, self.__uv$config.bare);
 };
 
-async function __uvHook(window, config = {}, bare = '/bare/') {
+async function __uvHook(window, config = {}, bare = '/FireUnblocker/bare/') {
     if ('__uv' in window && window.__uv instanceof Ultraviolet) return false;
 
     if (window.document && !!window.window) {
@@ -727,7 +727,7 @@ async function __uvHook(window, config = {}, bare = '/bare/') {
 
         event.data.url =  (__uv.bare.protocol === 'https:' ? 'wss://' : 'ws://') + __uv.bare.host + __uv.bare.pathname + 'v1/';
         event.data.protocols = [
-            'bare',
+            '/Fireunblocker/bare',
             __uv.encodeProtocol(JSON.stringify({
                 remote,
                 headers,

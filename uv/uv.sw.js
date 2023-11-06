@@ -1,10 +1,10 @@
-importScripts('/uv/uv.bundle.js');
-importScripts('/uv/uv.config.js');
+importScripts('/FireUnblocker/uv/uv.bundle.js');
+importScripts('/FireUnblocker/uv/uv.config.js');
 
 class UVServiceWorker extends EventEmitter {   
     constructor(config = __uv$config) {
         super();
-        if (!config.bare) config.bare = '/bare/';
+        if (!config.bare) config.bare = '/FireUnblocker/bare/';
         this.addresses = typeof config.bare === 'string' ? [ new URL(config.bare, location) ] : config.bare.map(str => new URL(str, location));
         this.headers = {
             csp: [
@@ -52,7 +52,7 @@ class UVServiceWorker extends EventEmitter {
         };
     };
     async fetch({ request }) {
-        if (!request.url.startsWith(location.origin + (this.config.prefix || '/service/'))) {
+        if (!request.url.startsWith(location.origin + (this.config.prefix || '/FireUnblocker/service/'))) {
             return fetch(request);
         };
         try {
@@ -60,7 +60,7 @@ class UVServiceWorker extends EventEmitter {
             const ultraviolet = new Ultraviolet(this.config);
 
             if (typeof this.config.construct === 'function') {
-                this.config.construct(ultraviolet, 'service');
+                this.config.construct(ultraviolet, '/FireUnblocker/service');
             };
 
             const db = await ultraviolet.cookie.db();
