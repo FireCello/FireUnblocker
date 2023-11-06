@@ -1,0 +1,85 @@
+@font-face{
+  font-family: CircleText;
+  src: "https://firecello.github.io/FireUnblocker/fonts/CircleText.otf";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: CircleText;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(90deg, #53a0fd, #01c2f3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  height: 20vh;
+  color: white;
+  font-size: 22vh;
+  font-family: sans-serif;
+  line-height: 20.4vh;
+  display: flex;
+  position: relative;
+  /*background: green;*/
+  overflow: hidden;
+  transition: line-height 0.2s ease-out;
+}
+
+.clock::before, .clock::after {
+  content: '';
+  width: 7ch;
+  height: 3vh;
+
+  position: absolute;
+  z-index: 2;
+}
+
+.clock::after {
+  bottom: 0;
+
+}
+
+.clock > div {
+  display: flex;
+}
+
+.tick {
+  line-height: 17vh;
+  transition: line-height 0.2s ease-out;
+}
+
+.tick-hidden {
+  opacity: 0;
+}
+
+.move {
+  -webkit-animation: move linear 1s infinite;
+          animation: move linear 1s infinite;
+}
+
+@-webkit-keyframes move {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(-20vh);
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(-20vh);
+  }
+}

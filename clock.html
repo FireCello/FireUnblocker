@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FireUnblocker - Clock iFrame</title>
+  <link rel="stylesheet" href="./clock.css">
+  <style>
+    .div {
+      transition: 0.7s line-height ease-in-out;
+    }
+    .clock {
+      /* Adjust the size as needed */
+
+      background-color: #000;
+      /* Black background */
+      border-radius: 10px;
+      /* Rounded corners */
+
+    }
+
+    .tick {
+      background-color: #fff;
+      /* Black background */
+      border-radius: 10px;
+      /* Rounded corners */
+      height: 20vh;
+      color: white;
+      font-size: 22vh;
+      font-family: sans-serif;
+      line-height: 20.4vh;
+      display: flex;
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .tick::before,
+    .tick::after {
+      content: '';
+      width: 7ch;
+      height: 3vh;
+
+      position: absolute;
+      z-index: 2;
+    }
+
+    .tick::after {
+      bottom: 0;
+
+    }
+
+    .tick>div {
+      display: flex;
+    }
+
+    .number {
+      transition: line-height 0.2s ease-out;
+    }
+
+    .lineHeightNormal {
+      transition: line-height 0.2s ease-out;
+    }
+
+    .lineHeightTaller {
+      line-height: 1.15;
+      transition: line-height 0.2s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="clock">
+    <div class="hours">
+      <div class="first">
+
+        <div class="number" id="number1" >0</div>
+      </div>
+      <div class="second">
+
+        <div class="number" id="number2" >0</div>
+      </div>
+    </div>
+  </div>
+  <div class="tick" style="background-color: transparent;">:</div>
+  <div class="clock">
+    <div class="minutes">
+      <div class="first">
+
+        <div class="number" id="number3" >0</div>
+      </div>
+      <div class="second">
+
+        <div class="number" id="number4" >0</div>
+      </div>
+    </div>
+  </div>
+  <div class="tick" style="background-color: transparent;">:</div>
+  <div class="clock">
+    <div class="seconds">
+      <div class="first">
+
+        <div class="number" id="number5" >0</div>
+      </div>
+      <div class="second infinite">
+
+        <div class="number" id="number6" style="
+        vertical-align: middle;">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- partial -->
+  <script src="./clock.js"></script>
+
+</body>
+
+</html>
