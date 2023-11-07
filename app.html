@@ -200,6 +200,9 @@
         event.preventDefault(); // Prevent the browser's context menu from appearing
 
         var contextMenu = document.getElementById('contextMenu');
+        if (contextMenu.classList.contains("active")){
+          contextMenu.classList.remove('active')
+        }
 
         // Set the position of the menu to the mouse position
         contextMenu.style.top = `${event.clientY}px`;
