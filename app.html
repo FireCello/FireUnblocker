@@ -4,8 +4,8 @@
 <head>
   <script src="/FireUnblocker/uv/uv.bundle.js" async defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
 
   <link rel="icon" href="/FireUnblocker/assets/img/logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +47,7 @@
 
 <body>
   <div id="particles-js"></div>
-  <div id="contextMenu" class="context-menu" style="font-family: 'Outft-Light',sans-serif;">
+  <div id="contextMenu" class="context-menu" style="font-family: Outft-Light,sans-serif;">
     <div class="context-menu-item with-submenu" onclick="toggleSubmenu(event)"><i class="bi bi-backpack"></i> Tab Cloak
     </div>
     <div class="context-submenu">
@@ -195,6 +195,28 @@
     <script src="/FireUnblocker/uv/uv.config.js"></script>
     <script src="/FireUnblocker/assets/js/clock.js"></script>
     <script>
+      // Listen for contextmenu event (right-click)
+      document.addEventListener('contextmenu', function (event) {
+        event.preventDefault(); // Prevent the browser's context menu from appearing
+
+        var contextMenu = document.getElementById('contextMenu');
+
+        // Set the position of the menu to the mouse position
+        contextMenu.style.top = `${event.clientY}px`;
+        contextMenu.style.left = `${event.clientX}px`;
+
+        // Add the 'active' class to the menu to show it
+        contextMenu.classList.add('active');
+      });
+
+      // Listen for click events to hide the menu
+      document.addEventListener('click', function (event) {
+        var contextMenu = document.getElementById('contextMenu');
+
+        // Remove the 'active' class to hide the menu
+        contextMenu.classList.remove('active');
+      });
+
       var bgUrl = localStorage.getItem('bgUrl');
       if (bgUrl === 'none' || bgUrl === null || bgUrl === '') {
         console.log('No custom background set.');

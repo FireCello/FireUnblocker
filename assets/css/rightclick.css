@@ -2,23 +2,34 @@ body {
   font-family: mosk;
 }
 
+/* Code is always commented against to help for contributions towards UI */
 .context-menu {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  opacity: 0;
+  /* Start with the menu invisible */
+  transform: translateY(20px);
+  /* Start the menu 20px below its final position */
   display: none;
-  font-family: poppins;
-  position: fixed; /* Change position to fixed */
+  /* Keep this as none */
+  font-family: Outfit-Light;
+  position: fixed;
+  /* Change position to fixed */
   background-color: #ffffff7e;
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 8px;
   border-radius: 8px;
   z-index: 1;
-  top: 0; /* Set initial top position */
-  left: 0; /* Set initial left position */
+  top: 0;
+  /* Set initial top position */
+  left: 0;
+  /* Set initial left position */
 }
+
 /* Define the context menu items */
 .context-menu-item {
   cursor: pointer;
-  font-family: poppins;
+  font-family: Outfit-Light;
   padding: 8px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
@@ -43,13 +54,19 @@ body {
   font-family: poppins;
   min-width: 200px;
   background-color: #ffffff7e;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 8px;
   border-radius: 8px;
   z-index: 1;
 }
+
 .submenu-separator {
   border-bottom: 1px solid rgb(207, 207, 207)7e;
   background-color: red;
   margin: 4px 0;
+}
+.context-menu.active {
+  display: block; /* Display the menu */
+  opacity: 1; /* Fade in the menu */
+  transform: translateY(0); /* Slide the menu into its final position */
 }
