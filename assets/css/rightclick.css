@@ -9,8 +9,7 @@ body {
   /* Start with the menu invisible */
   transform: translateY(20px);
   /* Start the menu 20px below its final position */
-  display: none;
-  /* Keep this as none */
+
   font-family: Outfit-Light;
   position: fixed;
   /* Change position to fixed */
