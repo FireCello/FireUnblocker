@@ -9,11 +9,12 @@ body {
   /* Start with the menu invisible */
   transform: translateY(20px);
   /* Start the menu 20px below its final position */
-
+  display: none;
   font-family: Outfit-Light;
+  color: white;
   position: fixed;
   /* Change position to fixed */
-  background-color: #ffffff7e;
+  background-color: #0000007e;
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 8px;
