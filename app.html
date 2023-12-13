@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://firecello.github.io/FireUnblocker/uv/uv.bundle.js" async defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,12 +44,61 @@
       console.log("Login is not enabled.");
     }
   </script>
+  <script>
+
+    const modal = document.querySelector('.modal');
+
+
+    const closeButton = document.querySelector('.button')
+    $(document).ready(function () {
+      modal.classList.remove('disappear')
+      modal.classList.add('active');
+      var better = document.getElementById('modal1')
+
+      setTimeout(function () {
+        better.setAttribute("style", "background-color: rgba(255, 255, 255, 0.3);")
+
+      }, 300)
+      closeButton.addEventListener('click', () => {
+        modal.classList.remove('disappear')
+        var better = document.getElementById('modal1')
+        better.removeAttribute("style")
+        if (better.hasAttribute("style")) {
+          var better = document.getElementById('modal1')
+          better.removeAttribute("style")
+        } else {
+          modal.classList.add('disappear')
+          modal.classList.remove('active')
+          setTimeout(function () {
+
+            modal.classList.remove('disappear')
+          }, 500)
+        }
+
+
+      })
+    })
+
+
+  </script>
   <title>Doge | V4</title>
 </head>
 <br>
 
 <body>
   <div id="particles-js"></div>
+  <div class="modal" id="modal1">
+
+    <div class="modal-content">
+      <h2>Software Modification Warning</h2>
+      <p>This software (FireUnblocker) is a modified version of the Doge Unblocker Proxy, originally developed by Doge
+        Network and Derpman. It is distributed under the terms of the GNU General Public License, version 3 (GPL-3.0).
+        The original copyright and license information are retained, so make sure to follow rules from the previous
+        license. Modifications made are documented on a separate page(Bottom Right)</p>
+      <button class="button">Close</button>
+    </div>
+
+  </div>
   <div id="contextMenu" class="context-menu" style="font-family: Outft-Light,sans-serif;">
     <div class="context-menu-item with-submenu" onclick="toggleSubmenu(event)"><i class="bi bi-backpack"></i> Tab Cloak
     </div>
@@ -95,7 +147,8 @@
     transition: .2s;
     border-radius: 7px;
     line-height: 2;
-    "><img class="title" src="https://firecello.github.io/assets/logo.svg" style="width:64px;height:64px;vertical-align: middle;"> Fire Unblocker</a>
+    "><img class="title" src="https://firecello.github.io/assets/logo.svg"
+        style="width:64px;height:64px;vertical-align: middle;"> Fire Unblocker</a>
 
   </nav>
   </div>
@@ -408,14 +461,12 @@
       // Listen for contextmenu event (right-click)
       document.addEventListener('contextmenu', function (event) {
         event.preventDefault(); // Prevent the browser's context menu from appearing
-        
+
 
         var contextMenu = document.getElementById('contextMenu');
-        setTimeout(function(){
-          contextMenu.style.visibility = "visible"
-        }, 10)
-        
-        if (contextMenu.classList.contains("active")){
+
+
+        if (contextMenu.classList.contains("active")) {
           contextMenu.classList.remove('active')
         }
         console.log(contextMenu.classList)
@@ -434,12 +485,8 @@
 
         // Remove the 'active' class to hide the menu
         contextMenu.classList.remove('active');
-        setTimeout(function(){
-          var contextMenu = document.getElementById('contextMenu');
-          contextMenu.style.visibility = "hidden"
+      })
 
-        },500)
-      });
 
       var bgUrl = localStorage.getItem('bgUrl');
       if (bgUrl === 'none' || bgUrl === null || bgUrl === '') {

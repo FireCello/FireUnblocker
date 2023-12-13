@@ -17,22 +17,22 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "static")));
 app.get('/FireUnblocker/app', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './static/app.html'));
+  res.sendFile(path.join(process.cwd(), '/FireUnblocker/app.html'));
 });
 app.get('/FireUnblocker/~', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './static/loader.html'));
+  res.sendFile(path.join(process.cwd(), './FireUnblocker/loader.html'));
 });
 app.get('/FireUnblocker/apps', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './static/apps.html'));
+  res.sendFile(path.join(process.cwd(), './FireUnblocker/apps.html'));
 });
 app.get('/FireUnblocker/gms', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './static/gms.html'));
+  res.sendFile(path.join(process.cwd(), './FireUnblocker/gms.html'));
 });
 app.get('/FireUnblocker/lessons', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './static/agloader.html'));
+  res.sendFile(path.join(process.cwd(), './FireUnblocker/agloader.html'));
 });
 app.get('/FireUnblocker/credits', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './static/credits.html'));
+  res.sendFile(path.join(process.cwd(), './FireUnblocker/credits.html'));
 });
 app.use((req, res) => {
   res.statusCode = 404;

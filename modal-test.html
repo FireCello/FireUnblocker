@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+
+            z-index: 5;
+
+        }
+
+        .modal-background-active {
+            z-index: 4;
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+
+            filter: blur(300px);
+            transition: backdrop-filter 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        }
+
+        .modal-background-disappear {
+            z-index: 4;
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+
+            filter: blur(5px);
+            transition: opacity 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+        }
+
+        .modal.active {
+            transition: opacity 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            display: block;
+
+
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            animation: modal-appear 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+        }
+
+        .modal.disappear {
+            transition: opacity 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+            display: block;
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            animation: modal-disappear 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background-color: #f3f3f3;
+            border-radius: 4px;
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            box-shadow:
+
+                0px 0px 5px rgba(0, 0, 0, 0.1),
+                inset 0px 0px 2px rgba(0, 0, 0, 0.1),
+                inset 0px 0px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .modal-content h2 {
+            margin: 20px 0;
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            padding: 0 20px;
+        }
+
+        .modal-content p {
+            margin: 20px;
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            transition: background-color 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+
+        @keyframes modal-disappear {
+            0% {
+
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes modal-appear {
+            0% {
+
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neumorphic Glass Modal</title>
+</head>
+
+<body>
+    <button id="openModalBtn">Open Modal</button>
+
+    <div class="modal" id="modal1">
+
+        <div class="modal-content">
+            <h2>Software Modification Warning</h2>
+            <p>This software (FireUnblocker) is a modified version of the Doge Unblocker Proxy, originally developed by Doge Network and Derpman. It is distributed under the terms of the GNU General Public License, version 3 (GPL-3.0). The original copyright and license information are retained, so make sure to follow rules from the previous license. Modifications made are documented on a separate page(Bottom Right)</p>
+            <button class="button">Close</button>
+        </div>
+
+    </div>
+
+    <div id="particles-js">
+
+
+    </div>
+    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+
+        const modal = document.querySelector('.modal');
+        const button2 = document.getElementById('openModalBtn');
+
+        const closeButton = document.querySelector('.button')
+
+        button2.addEventListener('click', () => {
+            modal.classList.remove('disappear')
+            modal.classList.add('active');
+            var better = document.getElementById('modal1')
+
+            setTimeout(function () {
+                better.setAttribute("style", "background-color: rgba(255, 255, 255, 0.3);")
+
+            }, 300)
+        });
+        closeButton.addEventListener('click', () => {
+            modal.classList.remove('disappear')
+            var better = document.getElementById('modal1')
+            better.removeAttribute("style")
+            if (better.hasAttribute("style")) {
+                var better = document.getElementById('modal1')
+                better.removeAttribute("style")
+            } else {
+                modal.classList.add('disappear')
+                modal.classList.remove('active')
+                setTimeout(function () {
+
+                    modal.classList.remove('disappear')
+                }, 500)
+            }
+
+
+        })
+
+    </script>
+    <script src="modal-test.js"></script>
+</body>
+
+</html>
