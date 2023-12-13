@@ -390,7 +390,7 @@ text{
   transition: 0.5s;
   letter-spacing: 1px;
   border-radius: 8px;
- 
+}
   button {
    width: 101%;
    height: 100%;
@@ -404,13 +404,8 @@ text{
    cursor: pointer;
    -webkit-animation: ani2 0.7s steps(70) forwards;
    animation: ani2 0.7s steps(70) forwards;
- 
-   &:hover {
-    -webkit-animation: ani 0.7s steps(70) forwards;
-    animation: ani 0.7s steps(70) forwards;
-   }
   }
- }
+   
  @-webkit-keyframes ani {
   from {
    -webkit-mask-position: 0 0;
@@ -457,7 +452,14 @@ text{
    -webkit-mask-position: 0 0;
    mask-position: 0 0;
   }
- }
+}
+   button:hover {
+    -webkit-animation: ani 0.7s steps(70) forwards;
+    animation: ani 0.7s steps(70) forwards;
+   }
+  
+
+ 
 p {
   font-family: 'Outfit', sans-serif;
   color: white;
